@@ -1,1 +1,2 @@
 # ReturnRight
+"Return Right" is a clever way to help people find their lost stuff. It uses technology to bring the community together and make it easier to get back lost items. By keeping an eye on how things are going and making improvements as needed, like sending emails to update users about their lost or found items, the platform keeps its promise to work well, be clear, and make users happy. This makes it a reliable helper for anyone who's lost something important.
