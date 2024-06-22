@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lemon&family=Monoton&family=Montserrat:ital,wght@0,200;0,400;0,500;1,300&display=swap"
+        rel="stylesheet" />
+
+    <!-- mdbootstrap -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="node_modules/mdbootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css" />
+    <link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/lostitems.css">
+    <!--font Awesome ... for button icon-->
+    <script src="https://kit.fontawesome.com/9973cec642.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <%- include('navbar') %>
+    <div class="heading text-center mb-4 pt-5">
+        <h2 class="heading">LOST ITEMS DIRECTORY<div class="d-flex justify-content-center"><hr /></div></h2>
+    </div>
+    <div class="dropdown" id="myfilter">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter By
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" id="mymenu">
+            <li><a href="#" onclick="filter('Electronics')">Electronics</a></li>
+            <li><a href="#" onclick="filter('Keys')">Keys</a></li>
+            <li><a href="#" onclick="filter('Books')">Books</a></li>
+            <li><a href="#" onclick="filter('Sports Items')">Sports Items</a></li>
+            <li><a href="#" onclick="filter('Stationery')">Stationery</a></li>
+            <li><a href="#" onclick="resetFilter()">Reset</a></li>
+        </ul>
+    </div>
+  
+
+    <div id="cardContainer" class="card-container">
+        <% if (lostItems.length > 0) { %>
+            <div class="card-wrapper">
+                <% lostItems.forEach(lostItem => { %>
+                <div class="card1">
+                    <img src="data:<%= lostItem.image.contentType %>;base64,<%= lostItem.image.data.toString('base64') %>" alt="Lost Item Image" />
+                    <div class="card-body">
+                        <h5><%= lostItem.category %></h5>
+                        <p>Name: <%= lostItem.name %></p>
+        
+                        <p>Item: <%= lostItem.item %></p>
+                        <p>ItemId: <%= lostItem.rollno %></p>
+                        <p>Category: <%= lostItem.category %></p>
+                        <p>Location: <%= lostItem.location %></p>
+                        <p>Date: <%= new Date(lostItem.date).toLocaleDateString() %></p>
+                        <p>Time: <%= lostItem.time %></p>
+                        <% if (lostItem.message) { %>
+                        <p>Message: <%= lostItem.message %></p>
+                        <% } %>
+                        <% if (loggedInUser && loggedInUser.username === lostItem.name) { %>
+                            <form action="/deleteLostItem" method="post">
+                                <input type="hidden" name="itemId" value="<%= lostItem._id %>">
+                                <button type="submit" class="delete-button">Delete</button>
+                            </form>
+                        <% } %>
+                        <button class="found-button" onclick="openFormOverlay()">Found</button>
+                        
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+            <% } else { %>
+            <p>No lost items available</p>
+            <% } %>
+        
+    </div>
+    <div id="formOverlay" class="form-overlay">
+        <div class="form-container">
+            <h2>Provide Your Details</h2>
+            <div style="max-width: 350px; margin: 0 auto; padding: 5px 15px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; overflow-y: auto;">
+                <form id="detailsForm" method="post" action="/foundclick" enctype="multipart/form-data">
+                    <label for="name" style="display: block; margin-bottom: 10px;">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your Name" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;" required><br>
+    
+                    <label for="email" style="display: block; margin-bottom: 10px;">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your Email" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;" required><br>
+    
+                    <label for="itemid" style="display: block; margin-bottom: 10px;">Item No:</label>
+                    <input type="number" id="itemid" name="itemid" placeholder="Enter your ItemNo" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;" required><br>
+    
+                    <label for="proof" style="display: block; margin-bottom: 10px;">Proof:</label>
+                    <input type="file" name="proof" id="proof" accept="image/*" style="margin-bottom: 10px;" required><br>
+    
+                    <label for="describe" style="display: block; margin-bottom: 10px;">Features:</label>
+                    <textarea name="describe" id="describe" cols="30" rows="5" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; resize: vertical; overflow-y: auto;"></textarea><br>
+    
+                    <div style="display: flex;">
+                        <button type="submit" class="submit-btn" style="flex: 1; padding: 8px; font-size: 14px; background-color: #007bff; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Submit</button>
+                        <button id="closeForm" class="close-form-button" onclick="closeFormOverlay()" style="flex: 1; padding: 8px; font-size: 14px; margin-left: 10px; background-color: #f44336; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include('footer') %>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>// Function to display data in cards
+         function openFormOverlay() {
+            document.getElementById('formOverlay').style.display = 'block';
+        }
+
+        // Function to close the form overlay
+        function closeFormOverlay() {
+            document.getElementById('formOverlay').style.display = 'none';
+        }
+// Add your custom JavaScript code here for filtering
+function filter(category) {
+    var cards = document.querySelectorAll('.card1');
+    cards.forEach(card => {
+        var cardCategory = card.querySelector('h5').textContent.trim();
+        if (category === 'All') {
+            card.style.display = 'block'; // Show all cards
+        } else {
+            if (cardCategory === category) {
+                card.style.display = 'block'; // Show cards with the selected category
+            } else {
+                card.style.display = 'none'; // Hide cards with other categories
+            }
+        }
+    });
+}
+
+function resetFilter() {
+    var cards = document.querySelectorAll('.card1');
+    cards.forEach(card => {
+        card.style.display = 'block'; // Reset all cards to be visible
+    });
+}
+
+    </script>
+    <!-- mdbootstrap -->
+    <script type="text/javascript" src="node_modules/mdbootstrap/js/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/mdbootstrap/js/popper.min.js"></script>
+    <script type="text/javascript" src="node_modules/mdbootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,400 @@
+
+/* Style for the dropdown button */
+.btn-primary {
+background-color: #007bff;
+color: white;
+border: none;
+}
+
+/* Style for the dropdown menu */
+.dropdown-menu {
+min-width: 200px; /* Adjust as needed */
+border: 1px solid rgba(0, 0, 0, 0.15);
+border-radius: 4px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the input field */
+.form-control {
+width: 100%;
+margin-bottom: 10px; /* Add some space below the input */
+}
+
+/* Style for the dropdown items */
+.dropdown-menu li a {
+color: #333;
+}
+
+.dropdown-menu li a:hover {
+background-color: #f2f2f2;
+}
+/* Style for card container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px; /* Adjust as needed */
+}
+
+/* Style for individual cards */
+.card-container .card1 {
+    list-style-type: none;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Adjust width as needed */
+}
+
+.card-container .card1 .card-body {
+    padding: 10px;
+}
+
+.card-container .card1 h5 {
+    margin-top: 0;
+    color: #333;
+}
+
+.card-container .card1 p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.card-container .card1 .found-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-container .card1 .found-button:hover {
+    background-color: #0056b3;
+}
+/* Style for card container */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* Adjust maximum width as needed */
+ 
+}
+.card1 .delete-button {
+  margin-bottom: 5px;
+  background-color:red;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  }
+  
+  .card1 .delete-button:hover {
+  background-color: red;
+  }
+  
+/* Style for card wrapper */
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+/* Style for individual cards */
+.card1 {
+  flex: 0 0 calc(30% - 10px); /* Adjust width as needed */
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card1 img {
+  width: 300px;
+  height: 300px; /* Set a fixed height for all images */
+  object-fit: cover; /* Ensure images maintain aspect ratio and cover the container */
+  border-radius: 8px 8px 0 0;
+}
+
+.card1 .card-body {
+  padding: 10px;
+}
+
+.card1 h5 {
+  margin-top: 0;
+  color: #333;
+}
+
+.card1 p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.card1 .found-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card1 .found-button:hover {
+  background-color: #0056b3;
+}
+
+/*
+#cardContainer{
+display: flex;
+flex-wrap: wrap; 
+  justify-content: space-between; 
+}
+#cardContainer .card1{
+    margin: 10px;
+    width: 20%;
+}
+#cardContainer .card1 img{
+    padding: 6px;
+    width: auto;
+    height: 300px;
+}
+.card-body{
+    padding: 20px;
+}
+.card-body h5{
+    font-size: medium;
+    color: #007bff;
+}
+.card-body p{
+    color: #caac00;
+}
+.found-button{
+    border: 0px;
+    background-color:#007bff;
+    border-radius: 7px;
+    color: white;
+  padding:10px;
+
+}
+.found-button:hover{
+    transform: scale(1.2);
+    background-color: #caac00;
+}
+*/
+#foundheading{
+    text-align: center;
+    color: #007bff;
+    transition: all 0.3s ease 0s;
+    
+}
+#foundheading:hover{
+    color:#caac00;
+    transform: scale(1.2);
+}
+  
+  /* Style the form container */
+  #foundForm {
+    display: none;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Style the form title */
+  #foundForm h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Style form inputs */
+  #foundForm input[type="text"],
+  #foundForm input[type="email"],
+  #foundForm button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Style the submit button */
+  #foundForm button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Style the submit button on hover */
+  #foundForm button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style the form input labels */
+  #foundForm label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  /* Style the dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Style the dropdown button */
+  .dropdown .btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style the dropdown button on hover */
+  .dropdown .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style the dropdown menu */
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+  
+  /* Style dropdown menu items */
+  .dropdown-menu li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Style dropdown menu links */
+  .dropdown-menu li a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Style dropdown menu links on hover */
+  .dropdown-menu li a:hover {
+    background-color:#007bff;
+  }
+  .form-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.close-form-button {
+    margin-top: 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.submit-btn{
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+  background: #030027;
+  padding: 1rem 8rem;
+  z-index: 1000;
+}
+
+.navbar .navbar-brand {
+  
+  font-weight: 700;
+  font-family: 'Monoton', cursive;
+}
+
+.navbar .navbar-brand:hover {
+  color: #caac00;
+}
+
+ul li {
+  margin: 0px 10px;
+}
+
+#navbarSupportedContent>ul>li:nth-child(n)>a {
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 0 0.8rem;
+  cursor: pointer;
+}
+
+#navbarSupportedContent>ul>li:nth-child(n)>a:hover {
+  color: #caac00;
+}
+
+#navbarSupportedContent>button:hover {
+  background: rgb(22, 138, 113);
+}
+@media (max-width: 768px) {
+  /* Adjust card layout for screens smaller than 768px (typically mobile devices) */
+  #cardContainer .card {
+    width: 100%; /* Make each card take full width */
+  }
+}
+@media (max-width: 768px) {
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: column;
+  }
+  .navbar-nav .nav-item {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+}
+

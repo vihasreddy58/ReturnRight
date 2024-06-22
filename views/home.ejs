@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lemon&family=Monoton&family=Montserrat:ital,wght@0,200;0,400;0,500;1,300&display=swap"
+        rel="stylesheet" />
+
+    <!-- mdbootstrap -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('navbar') %>
+
+</h1>
+    <main>
+        <section class="discovery container section-1">
+            <div class="text"  style="margin-left:70px">
+                <h1 class="got-lost-heading mb-3">GOT LOST</h1>
+                <p>
+                    Something got misplaced and ended up with you—all to show the world how honest you are!
+                    Or, if something is missing, simply unwind! These people are truly amazing!
+                </p>
+                <div class="shrink">
+                    <a class="learn-more" href="/register">Register Now</a>
+                </div>
+            </div>
+            <div class="img col-lg-6 col-md-6 col-12">
+                <img src="images/lost-and-found.png" alt="image" class="img-fluid lost-found" />
+            </div>
+        </section>
+        <section class="discovery-col-ak section-2">
+            <div class="container">
+                <div class="text pt-5 pb-5">
+                    <h2 class="title mb-3">WHAT WE DO<hr /></h2>
+                    <p class="mb-5">
+                        We assist students who have misplaced something valuable on college in an effort to ease some of their stress.
+                        There are two sections that you can visit: the <b>FOUND</b> section and the <b>LOST</b> section. You can ask your fellow students for assistance and let others know what valuable item you lost. If you find something, you can also aid someone else. Each part has instructions specific to it. Additionally, since there are no staff members involved in this process, it contributes to maintaining transparency and strengthening the bonds amongst the children.
+                    </p>
+                    <div class="shrink">
+                        <a class="learn-more" href="/aboutus">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="service section-3">
+            <div class="col mx-auto align-items-center pt-5">
+                <div class="heading text-center mb-5 pt-3">
+                    <h2 class="heading">OUR SERVICES<div class="d-flex justify-content-center"><hr /></div></h2>
+                </div>
+            </div>
+            <div class="rule1">
+                <div class="card1">
+                    <div class="image1">
+                        <img src="/images/lost-card.png" alt="" />
+                    </div>
+                    <h5>Lost</h5>
+                    <p>Only the property lost on College can be reported.</p>
+                    <p>Check found images before submitting the lost form.</p>
+                    <p>Try to be as detailed as you can.</p>
+                    <p>Head towards the form below if you have lost your property.</p>
+                </div>
+                <div class="card1">
+                    <div class="image1">
+                        <img src="/images/found-card.png" alt="" />
+                    </div>
+                    <h5>Found</h5>
+                    <p>Please try to report as soon as possible so that you can help someone in need.</p>
+                    <p>When reporting a found item, provide detailed information about where and when you found it.</p>
+                    <p>Be honest and transparent in your report, and ensure the safekeeping of the found item until it can be returned to its rightful owner.</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="heading text-center mb-4 pt-5">
+            <h2 class="heading pt-5">TESTIMONIALS<div class="d-flex justify-content-center"><hr /></div></h2>
+        </div>
+       <div class="container" id="scroller">
+    <div id="carouselContent" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active text-center p-4">
+                <center><h3>Suraj</h3></center>
+                <p>"I lost my wallet on campus and thought I'd never see it again. Thanks to this app, someone found it and returned it to me within hours. It's a lifesaver!"</p>
+            </div>
+            <div class="carousel-item text-center p-4">
+                <center><h3>Ram</h3></center>
+                <p>"As a professor, I often come across lost items in classrooms. This app makes it easy for me to report found items and reunite them with their owners. It's a fantastic initiative for our college community."</p>
+            </div>
+            <div class="carousel-item text-center p-4">
+                <center><h3>Nikhil</h3></center>
+                <p>"I've used this app multiple times to report lost items, and every time, I've received prompt assistance. The process is simple, and the response from fellow students and staff has been outstanding. Highly recommended!"</p>
+            </div>
+        </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon text-dark" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselContent" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+    </main>
+    <%- include('footer') %>
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Your additional scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

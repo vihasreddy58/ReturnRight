@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/css/lostForm.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Monoton&family=Montserrat:ital,wght@0,200;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <title>Lost Form</title>
+</head>
+
+<body>
+    <%- include('navbar') %>
+    <main>
+        <section>
+            <div class="container" id="main-container">
+                <div class="container mt-5" id="form-container">
+                    <h1 class="text-center">Lost Something?</h1>
+                    <h3 class="text-center">Help us to help you out!</h3>
+                    <form class="mt-4" action="/lostform" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="name" class="text-primary">Username*</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rollNo" class="text-primary">Email*</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber" class="text-primary">Phone Number*</label>
+                            <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rollno" class="text-primary">RollNO*</label>
+                            <input type="tel" class="form-control" id="rollno" name="rollno" placeholder="Your RollNo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="itemName" class="text-primary">Item*</label>
+                            <input type="text" class="form-control" id="itemName" name="item" placeholder="Item Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="category" class="text-primary">Category*</label>
+                            <select class="form-control" id="category" name="category" required>
+                                <option value="">Select Category</option>
+                                <option value="Electronics">Electronics</option>
+                                <option value="Keys">Keys</option>
+                                <option value="Books">Books</option>
+                                <option value="Sports Items">Sports Items</option>
+                                <option value="Stationery">Stationery</option>
+                                <option value="Stationery">Others</option>
+                                <!-- Add more categories if needed -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="location" class="text-primary">Location</label>
+                            <input type="text" class="form-control" id="location" name="location" placeholder="Location where you lost">
+                        </div>
+                        <div class="form-group">
+                            <label for="date" class="text-primary">Date*</label>
+                            <input type="date" class="form-control" name="date" id="date" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="time" class="text-primary">Time*</label>
+                          <input type="time" class="form-control" name="time" id="time" required>
+                      </div>
+                        <div class="form-group">
+                            <label for="itemDescription" class="text-primary">Item Description*</label>
+                            <textarea class="form-control" id="itemDescription" name="message" rows="3" placeholder="List out characters of Item..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="reward" class="text-primary">Rewards</label>
+                            <input type="text" class="form-control" id="reward" name="reward" placeholder="Offer a reward for returning the item (optional)">
+                        </div>
+                        <div class="form-group">
+                            <label for="itemImage" class="text-primary">Item Image*</label>
+                            <input type="file" class="form-control-file" id="itemImage" name="image" accept="image/*" required>
+                        </div>
+                        
+                        <div class="form-check mb-4">
+                            <input type="checkbox" class="form-check-input" id="termsCheckbox" required>
+                            <label class="form-check-label" for="termsCheckbox">Agree to terms and conditions*</label>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+    <%- include('footer') %>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
